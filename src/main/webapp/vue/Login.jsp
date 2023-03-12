@@ -5,6 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 <script> 
 function validate()
 { 
@@ -24,30 +26,25 @@ function validate()
 }
 </script> 
 </head>
-<body>
-    <div style="text-align:center"><h1>Login application in Java using MVC and MySQL </h1> </div>
+<body class ="loginpage">
+    <div style="text-align:center" class="container">
     <br>
     <form name="form" action="../LoginServlet" method="post" onsubmit="return validate()">
-        
-        <table align="center">
-         <tr>
-         <td>UserName</td>
-         <td><input type="text" name="username" /></td>
-         </tr>
-         <tr>
-         <td>Password</td>
-         <td><input type="password" name="password" /></td>
-         </tr>
-         <tr> 
+        <h1>Login</h1>
+
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+
          <td><span style="color:red"><%=(request.getAttribute("errMessage") == null) ? ""
          : request.getAttribute("errMessage")%></span></td>
          </tr>
-         <tr>
-         <td></td>
-         <td><input type="submit" value="Login"></input><input
-         type="reset" value="Reset"></input></td>
-         </tr>
-        </table>
+      <button type="submit" value="Login">Login</button>
+
     </form>
+    </div>
 </body>
 </html>

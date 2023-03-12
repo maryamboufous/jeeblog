@@ -1,14 +1,34 @@
+<%@page import="java.util.List"%>
+<%@page import="com.mvc.bean.Blog"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home</title>
+ <title>MY BLOG</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <center><h2>Home Page</h2></center>
- Welcome <%=request.getAttribute("userName") %> <!-- Refer to the video to understand how this works -->
- <div style="text-align: right"><a href="../LogoutServlet">Logout</a></div>
+
+	<%@ include file="includes/header.jsp" %>
+	
+	
+	<section class="homesection">
+	<div class="content">	
+	
+<ul>
+        <% for (Blog blog : blogs) { %>
+        <li>
+            <h2><%= blog.getTitre() %></h2>
+
+        </li>
+        <% } %>
+
+</ul>
+	
+	</div>
+	</section>
+
 </body>
 </html>
